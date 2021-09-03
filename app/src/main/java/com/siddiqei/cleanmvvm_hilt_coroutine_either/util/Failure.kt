@@ -8,5 +8,6 @@ sealed class Failure {
     }
 
     class NetworkConnection(val message:String = NO_INTERNET):Failure()
-    class Exception(val message: String= WENT_WRONG):Failure()
+    class ExceptionUnauthorized(val message:String = NO_INTERNET):Failure()
+    class Exception(val httpcode:Int=0, val message: String= WENT_WRONG):Failure()
 }
